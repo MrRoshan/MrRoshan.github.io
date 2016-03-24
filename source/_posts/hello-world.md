@@ -5,7 +5,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## Quick Start
 
-this is a test text
+this is a test text！！！
 
 ### Create a new post
 
