@@ -1,0 +1,6 @@
+*.log
+public/
+.deploy*/
+node_modules/
+themes/landscape/
+themes/next/
