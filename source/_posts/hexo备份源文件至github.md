@@ -32,7 +32,7 @@ db.json
 *.log
 node_modules/
 public/
-.deploy*/%
+.deploy*/
 themes/
 ```
 不建议把theme也提交保存，一个是因为各个theme多数是用git管理，会和我们这个源文件的git冲突，所以只需要提交theme的配置文件就好了，即便是忘记了主题名字也可以在hexo的配置文件中找到名字，有多个主题配置的自己就重命名区分吧。所以我们还要在根目录下建一个backup的文件夹，来存放诸如主题配置_config.yml等一些额外的文件。
