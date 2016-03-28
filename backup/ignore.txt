@@ -1,7 +1,7 @@
+Thumbs.db
 db.json
 *.log
 public/
 .deploy*/
 node_modules/
-themes/landscape/
-themes/next/
+themes/
