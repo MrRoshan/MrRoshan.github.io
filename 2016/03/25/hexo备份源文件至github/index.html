@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/25/hexo备份源文件至github/index.html">
 <meta property="og:site_name" content="Leo's blog">
 <meta property="og:description" content="偶然间看到了hexo，自动生成静态网页，还能一键部署到github page。忍不住的就想给欠费的逼格充点钱，按官网的步骤一步步做完，换好主题，感觉折腾的还不够，生成的静态网页都版本控制传上去了，文章源文件怎么能存本地，但是存网盘还不如托管到github，还能刷刷活跃度不是(无形装逼最为过瘾，23333333333)。">
-<meta property="og:updated_time" content="2016-03-28T13:17:54.000Z">
+<meta property="og:updated_time" content="2016-03-28T13:30:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo备份源文件至github">
 <meta name="twitter:description" content="偶然间看到了hexo，自动生成静态网页，还能一键部署到github page。忍不住的就想给欠费的逼格充点钱，按官网的步骤一步步做完，换好主题，感觉折腾的还不够，生成的静态网页都版本控制传上去了，文章源文件怎么能存本地，但是存网盘还不如托管到github，还能刷刷活跃度不是(无形装逼最为过瘾，23333333333)。">
@@ -294,7 +294,7 @@
 <p>选择第二个方式的需要先clone hexo托管页面的仓库(xxx.github.io)到本地，然后创建切换到新的分支，因为新建的分支是基于你的hexo deploy上去的分支内容，所以会包含所有的静态页面文件，需要手动把这些删除，然后commit后把新分支push到remote。<strong><font color="#FF3F3F">在commit提交之前看清楚分支是不是新建的分支，不要把master分支清空了，master分支是hexo deploy的分支。</font></strong></p>
 <h4 id="二、转移文件"><a href="#二、转移文件" class="headerlink" title="二、转移文件"></a>二、转移文件</h4><p>如果在本地已经写过文章，只需要把hexo博客所在文件下的所有文件拷贝到刚才的仓库文件夹即可。如果还未创建初始化好hexo，<strong>记住不可在刚才的仓库文件夹中初始化hexo(即hexo init命令)，否则会破坏你原有的仓库git文件</strong>，所以需要初始化hexo的话，先在别的文件夹下进行初始化，然后再全部拷贝到仓库文件夹。</p>
 <p>修改仓库所在目录下的.gitignore文件(没有的话创建一个)，加入下面这些提交时要忽略的文件(有需要的自己加)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/%</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure>
 <p>不建议把theme也提交保存，一个是因为各个theme多数是用git管理，会和我们这个源文件的git冲突，所以只需要提交theme的配置文件就好了，即便是忘记了主题名字也可以在hexo的配置文件中找到名字，有多个主题配置的自己就重命名区分吧。所以我们还要在根目录下建一个backup的文件夹，来存放诸如主题配置_config.yml等一些额外的文件。</p>
 <p>至于scaffolds目录下的模板文件看你是否对模板做改动了，改过后也一并托管上去吧。总之看个人自定义改动了哪些，然后把这些托管就好。</p>
 <h4 id="三、提交"><a href="#三、提交" class="headerlink" title="三、提交"></a>三、提交</h4><p>写好commit信息，然后就push到git就大功告成了。用新建分支方式的记得push前看清楚分支名。<br>最后撸主建议，把hexo source的目录，已经各种backup、配置文件的改动分成几个commit提交，这样以后更容易找也更清晰，当然对git管理很熟练的可以忽略这一段。</p>
